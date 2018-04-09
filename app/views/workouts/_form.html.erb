@@ -1,0 +1,43 @@
+<%= form_with(model: workout, local: true) do |form| %>
+  <% if workout.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(workout.errors.count, "error") %> prohibited this workout from being saved:</h2>
+
+      <ul>
+      <% workout.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<form>
+  <div class="field">
+    <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :workout_name, class: "form-control" %>
+  </div>
+</div>
+
+<div class="field">
+  <div class="form-group">
+  <%= form.label "Feature Image" %>
+  <%= form.select :method, [ 'kettlebell.jpg', 'strengthtraining.jpg', 'running.jpg', 'yoga.jpg', 'highintensity.jpg' ], :prompt => 'Select One', :class => 'custom-select' %>
+
+</div>
+</div>
+
+<div class="field">
+  <div class="form-group">
+  <%= form.label "Workout Type" %>
+  <%= form.select :featureImage, [ 'YOGA', 'Hiit', 'Cardio', 'Strength', 'Aerobic',  ], :prompt => 'Select One', :class => 'custom-select' %>
+
+</div>
+</div>
+
+
+  <div class="actions ">
+    <%= form.submit class: "btn btn-primary"  %>
+  </div>
+
+</form>
+<% end %>

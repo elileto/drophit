@@ -1,0 +1,22 @@
+<div class="main">
+    <h1> Hello my name is Elizabeth</h1>
+    <p> I'm making a Workout App </p>
+
+    <div class="row">
+
+
+        <% @workouts.each do |p| %>
+          <div class="col-lg-4 col-md-6">
+          <div class="card">
+          <%= image_tag(p.featureImage, :class => "card-img-top") %>
+          <div class="card-body">
+            <h5 class="card-title"><%= p.name %></h5>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+          </div>
+          </div>
+        <%end%>
+
+
+    </div>
+</div>

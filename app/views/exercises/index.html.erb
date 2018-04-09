@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+
+<h1>Exercises</h1>
+
+
+<br>
+<br>
+
+  </div>
+    <ul class="list-group">
+    <% @exercises.each do |exercise| %>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+      <li class="list-group-item d-flex justify-content-between align-items-center"><%= exercise.name%>
+
+      <span class="badge badge-primary badge-pill">Level: <%=exercise.intensityLevel%></span></li>
+    </ul>
+  </div>
+</div>
+    <% end %>
+
+<br>
+
+<%= link_to 'New', new_exercise_path(@exercise) %> |

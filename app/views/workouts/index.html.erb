@@ -1,0 +1,36 @@
+
+<div class="row">
+
+
+    <% @workouts.each do |p| %>
+      <div class="col-lg-4 col-md-6">
+      <div class="card">
+      <%= image_tag(p.featureImage, :class => "card-img-top") %>
+      <div class="card-body">
+        <h5 class="card-title"><%= p.name %></h5>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+
+      </div>
+      </div>
+      </div>
+    <%end%>
+
+
+</div>
+<br>
+<br>
+
+<div class="row">
+
+  <div class="card" style ="width: 100%;">
+  <div class="card-header" >
+    Can't find what your looking for?
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Create Your Own Workout</h5>
+    <p class="card-text">Get the custom workout and exercises you need.</p>
+      <%= link_to 'Create New Workout', new_workout_path, :class => "btn btn-primary"  %>
+  </div>
+</div>
+
+</div>

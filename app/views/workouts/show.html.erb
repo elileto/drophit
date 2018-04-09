@@ -1,0 +1,35 @@
+<!--<p id="notice"><%= notice %></p> -->
+
+<% @work.each do |t| %>
+ <h1> <%= t.name %> </h1>
+<% end %>
+
+<% @time.each do |t| %>
+<%hours = (t.minutes.to_i / 60) + t.hours%>
+<%minutes = t.seconds/60.to_i + (t.minutes % 60)%>
+<%seconds = t.seconds % 60%>
+<h2>  Total time: <%=format("%02d",hours.to_s)%>:<%=format("%02d",minutes.to_s)%>:<%=format("%02d",seconds.to_s)%> </h2>
+<% end %>
+
+<%@average.each do |avg|%>
+ <h2><span class="badge badge-primary badge-pill"> Intensity Level: <%= avg.avgIntensity %></span> </h2>
+<%end%>
+<br>
+
+  </div>
+    <ul class="list-group">
+    <% @title.each do |exercise| %>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+      <li class="list-group-item d-flex justify-content-between align-items-center"><%= exercise.exercise%>
+
+      <span class="badge badge-primary badge-pill">Level: <%=exercise.intensityLevel%></span></li>
+    </ul>
+  </div>
+</div>
+    <% end %>
+
+<br>
+
+<%= link_to 'Edit', edit_workout_path(@workout) %> |
+<%= link_to 'Back', workouts_path %>
