@@ -11,6 +11,8 @@ class Workout < ApplicationRecord
     .where(id: workout)
   end
 
+
+  
   def self.listWorkoutsByIntensity
     Workout.select("workouts.name, featureImage, AVG(intensityLevel) as avgIntensity")
     .joins("INNER JOIN exercises_workouts ON workouts.id = exercises_workouts.workout_id")

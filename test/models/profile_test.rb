@@ -7,8 +7,10 @@ class ProfileTest < ActiveSupport::TestCase
       end
 
     test "should be valid" do
-        assert_not @profile.valid?
+        assert @profile.valid?
       end
+
+
 
     test "gender should be present" do
         @profile.gender = " "
@@ -49,6 +51,8 @@ class ProfileTest < ActiveSupport::TestCase
         !(@profile.weight.is_a? Integer) 
         assert_not @profile.valid?
      end
+
+
 
    
 
