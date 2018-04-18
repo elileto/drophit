@@ -22,6 +22,7 @@ end
 test "name should be present" do
   @exercise.name = " "
   assert @exercise.invalid?
+  assert_equal ["can't be blank"], @exercise.errors[:name]
  end
 
  test "sets should be greater than or equal to zero" do
