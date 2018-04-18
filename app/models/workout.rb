@@ -1,7 +1,7 @@
 class Workout < ApplicationRecord
   validates :name, presence: true
   enum method: [:Other, :Yoga, :Hiit, :Cardio, :Strength, :Aerobic]
-  validates :method, allow_blank: true, numericality: { only_integer: true }
+  validates :method, allow_blank: true, inclusion: { in: methods.keys}
   validates :featureImage, format: { with: %r{.(gif|jpg|png)\Z}i, message: 'must be a URL for GIF, JPG or PNG image. Cannot be blank.' }
   has_and_belongs_to_many :exercises
   has_and_belongs_to_many :users

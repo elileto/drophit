@@ -10,10 +10,17 @@ class UserTest < ActiveSupport::TestCase
     assert @user.valid?
   end
 
+
+  #why doesn't size work, how to validate its associated with a profile
+  test 'has no profile' do
+     assert_not @user.profile.present?
+  end
+
    test "first name should be present" do
      @user.firstname = "      "
      assert_not @user.valid?
   end
+
 
   test "last name should be present" do
     @user.lastname = "      "
