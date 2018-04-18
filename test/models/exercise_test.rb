@@ -32,11 +32,11 @@ test "name should be present" do
 
   @exercise.sets = 0
   assert @exercise.valid?
-  assert @exercise.errors[:repetitions].any?
+  assert_not @exercise.errors[:repetitions].any?
 
   @exercise.sets = 1
   assert @exercise.valid?
-  assert @exercise.errors[:sets].any?
+  assert_not @exercise.errors[:sets].any?
 
 end
 
@@ -50,11 +50,11 @@ test "repetitions should be greater than or equal to zero" do
   
   @exercise.repetitions = 0
   assert @exercise.valid?
-  assert @exercise.errors[:repetitions].any?
+  assert_not @exercise.errors[:repetitions].any?
 
   @exercise.repetitions = 1
   assert @exercise.valid?
-  assert @exercise.errors[:repetitions].any?
+  assert_not @exercise.errors[:repetitions].any?
 end
 
 test "hours should be greater than or equal to zero" do
@@ -65,11 +65,11 @@ test "hours should be greater than or equal to zero" do
   
   @exercise.hours = 0
   assert @exercise.valid?
-  assert @exercise.errors[hours].any?
+  assert_not @exercise.errors[:hours].any?
 
   @exercise.hours = 1
   assert @exercise.valid?
-  assert @exercise.errors[hours].any?
+  assert_not @exercise.errors[:hours].any?
 end
 
 test "minutes should be greater than or equal to zero" do
@@ -80,11 +80,11 @@ test "minutes should be greater than or equal to zero" do
   
   @exercise.minutes = 0
   assert @exercise.valid?
-  assert @exercise.errors[:minutes].any?
+  assert_not @exercise.errors[:minutes].any?
 
   @exercise.minutes = 1
   assert @exercise.valid?
-  assert @exercise.errors[:minutes].any?
+  assert_not @exercise.errors[:minutes].any?
 end
 
 test "seconds should be greater than or equal to zero" do
@@ -95,11 +95,11 @@ test "seconds should be greater than or equal to zero" do
   
   @exercise.seconds = 0
   assert @exercise.valid?
-  assert @exercise.errors[:seconds].any?
+  assert_not @exercise.errors[:seconds].any?
 
   @exercise.seconds = 1
   assert @exercise.valid?
-  assert @exercise.errors[:seconds].any?
+  assert_not @exercise.errors[:seconds].any?
 end
 
 test "minutes should be less then 60" do
@@ -115,7 +115,7 @@ test "minutes should be less then 60" do
   
   @exercise.minutes = 59
   assert @exercise.valid?
-  assert @exercise.errors[:minutes].any?
+  assert_not @exercise.errors[:minutes].any?
 
 end
 
@@ -132,7 +132,7 @@ test "seconds should be less then 60" do
   
   @exercise.seconds = 59
   assert @exercise.valid?
-  assert @exercise.errors[:seconds].any?
+  assert_not @exercise.errors[:seconds].any?
 end
 
 test "weight should be greater than or equal to zero" do
@@ -143,11 +143,11 @@ test "weight should be greater than or equal to zero" do
   
   @exercise.weight = 0
   assert @exercise.valid?
-  assert @exercise.errors[:weight].any?
+  assert_not @exercise.errors[:weight].any?
 
   @exercise.weight = 1
   assert @exercise.valid?
-  assert @exercise.errors[:weight].any?
+  assert_not @exercise.errors[:weight].any?
 end
 
 
@@ -166,7 +166,7 @@ test "intensityLevel should be greater than or equal to one and less then or equ
 
   @exercise.intensityLevel = 1
   assert @exercise.valid?
-  assert @exercise.errors[:intensityLevel].any?
+  assert_not @exercise.errors[:intensityLevel].any?
 
   @exercise.intensityLevel = 6
   assert @exercise.invalid?
@@ -175,7 +175,7 @@ test "intensityLevel should be greater than or equal to one and less then or equ
 
   @exercise.intensityLevel = 5
   assert @exercise.valid?
-  assert @exercise.errors[:intensityLevel].any?
+  assert_not @exercise.errors[:intensityLevel].any?
 end
 
 
