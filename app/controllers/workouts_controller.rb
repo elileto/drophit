@@ -27,7 +27,7 @@ class WorkoutsController < ApplicationController
   # GET /workouts/1/edit
   def edit
   end
-
+  
   # POST /workouts
   # POST /workouts.json
   def create

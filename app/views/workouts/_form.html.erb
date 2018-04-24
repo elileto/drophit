@@ -1,3 +1,4 @@
+
 <%= form_with(model: workout, local: true) do |form| %>
   <% if workout.errors.any? %>
     <div id="error_explanation">
@@ -11,7 +12,7 @@
     </div>
   <% end %>
 <form>
-  <div class="field">
+  <div class="form-group">
     <div class="form-group">
     <%= form.label :name %>
     <%= form.text_field :name, id: :workout_name, class: "form-control" %>
@@ -19,18 +20,21 @@
 </div>
 
 <div class="field">
-  <div class="form-group">
-  <%= form.label "Feature Image" %>
-  <%= form.select :method, [ 'kettlebell.jpg', 'strengthtraining.jpg', 'running.jpg', 'yoga.jpg', 'highintensity.jpg' ], :prompt => 'Select One', :class => 'custom-select' %>
-
-</div>
+  <div class="control-group">
+  <%= form.label  "Featured Image" %>
+  <div class= "controls">
+  <%= form.select(:featureImage, [ 'kettlebell.jpg', 'strengthtraining.jpg', 'running.jpg',
+  'yoga.jpg', 'highintensity.jpg' ], {}, {:prompt => 'Select One', :class => "custom-select"})  %>
+  </div>
+  </div>
 </div>
 
 <div class="field">
-  <div class="form-group">
+  <div class="control-group">
   <%= form.label "Workout Type" %>
-  <%= form.select :featureImage, [ 'YOGA', 'Hiit', 'Cardio', 'Strength', 'Aerobic',  ], :prompt => 'Select One', :class => 'custom-select' %>
-
+    <div class= "controls">
+  <%= form.select(:method, [ 'YOGA', 'Hiit', 'Cardio', 'Strength', 'Aerobic'], {}, {:prompt => 'Select One', :class => "custom-select"}) %>
+    </div>
 </div>
 </div>
 
