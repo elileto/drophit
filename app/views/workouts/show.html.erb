@@ -4,12 +4,7 @@
  <h1> <%= t.name %> </h1>
 <% end %>
 
-<% @time.each do |t| %>
-<%hours = (t.minutes.to_i / 60) + t.hours%>
-<%minutes = t.seconds/60.to_i + (t.minutes % 60)%>
-<%seconds = t.seconds % 60%>
-<h2>  Total time: <%=format("%02d",hours.to_s)%>:<%=format("%02d",minutes.to_s)%>:<%=format("%02d",seconds.to_s)%> </h2>
-<% end %>
+<h2><%= total_time_format(@time)%></h2>
 
 <%@average.each do |avg|%>
  <h2><span class="badge badge-primary badge-pill"> Intensity Level: <%= avg.avgIntensity %></span> </h2>

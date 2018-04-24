@@ -6,6 +6,8 @@ get "avgIntensityLevel3", to: "workouts#avgIntensityLevel3"
   resources :users
   resources :profiles
 
+  root 'workouts#index', as: 'workouts_index'
+
   get 'welcome' => 'pages#home'
   get 'profiles/find'
 

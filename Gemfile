@@ -5,6 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+#my added gem files
+gem 'rbeautify', '~> 0.0.7'
+gem 'shopify-cloud', source: 'https://packages.shopify.io/shopify/gems'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
