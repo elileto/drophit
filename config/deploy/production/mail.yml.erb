@@ -1,0 +1,11 @@
+---
+apiVersion: stable.shopify.io/v1
+kind: Mail
+metadata:
+  name: "devdegree17-drophit-production"
+  labels:
+    app: "devdegree17-drophit"
+    namespace: metadata.namespace
+spec:
+  sendgrid-scope:
+  - mail.send
