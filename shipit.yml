@@ -1,0 +1,3 @@
+kubernetes:
+  namespace: devdegree17-drophit-production
+  context: tier4

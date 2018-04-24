@@ -1,0 +1,22 @@
+apiVersion: stable.shopify.io/v1
+kind: Elasticsearch
+metadata:
+  name: devdegree17-drophit
+  labels:
+    app: devdegree17-drophit
+    environment: production
+spec:
+  elastic-search-version: '6'
+  zones:
+    - us-east1-b
+    - us-east1-c
+    - us-east1-d
+  elasticsearch-spec: |-
+    reindex.remote.whitelist: 10.*.*.*:9200
+  node-specs:
+    - replicas: 3
+      cpu-limit: "1"
+      mem-limit: 2G
+      data-volume-size: 10Gi
+  snapshot:
+    bucket-name: shopify-devdegree17-drophit-prod-es-snapshots
