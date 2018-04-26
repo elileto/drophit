@@ -8,7 +8,7 @@ end
 #my added gem files
 gem 'rbeautify', '~> 0.0.7'
 gem 'shopify-cloud', source: 'https://packages.shopify.io/shopify/gems'
-
+gem 'rails-controller-testing'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'

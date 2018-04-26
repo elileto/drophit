@@ -18,10 +18,8 @@
     </div>
     </div>
     <div class="form-row">
-  
     <%= form.label :email %>
     <%= form.email_field :email, id: :user_email, :class=> "form-control", :placeholder=>"email" %>
-
   </div>
   <div class="form-row">
   
@@ -35,6 +33,7 @@
       <%= form.password_field :password_confirmation, class: 'form-control', :placeholder=>"Confirm Password" %>
   
   </div>
+  </br>
   <div class="form-row">
   
    <%= form.submit  "Create my Account", :class=>"btn btn-primary" %>
