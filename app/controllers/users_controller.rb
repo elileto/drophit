@@ -11,11 +11,17 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     #current_id = User.find(params[:id])
+    @user = User.find(params[:id])
     @workouts = User.usersWorkouts(User.find(params[:id]))
+    @profile = User.usersProfiles(User.find(params[:id]))
   end
 
   # GET /users/new
   def new
+    @user = User.new
+  end
+
+  def signup
     @user = User.new
   end
 

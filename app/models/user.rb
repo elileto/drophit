@@ -20,6 +20,11 @@ class User < ApplicationRecord
     .where(id: user)
   end
 
+  def self.usersProfiles(user)
+    Profile.all
+    .where(user_id: user)
+  end
+
 
 
 end

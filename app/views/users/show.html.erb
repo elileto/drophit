@@ -1,26 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.firstname %>
-</p>
+
+
+<h3><%= firstname_lastname(@user.firstname, @user.lastname)%></h3>
+
+<h4>
+  <strong>Email:</strong> <%= @user.email %>
+</h4>
 
 <p>
-  <strong>Last name:</strong>
-  <%= @user.lastname %>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    View Profile
+  </button>
 </p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    <%=@profile.find_each do |p|%>
+    <ul class="list-group, list-group-flush">
+  <li class="list-group-item"><strong> Gender: </strong> <%= p.gender%></li>
+  <li class="list-group-item"><strong> Height: </strong> <%= p.height%></li>
+  <li class="list-group-item"><strong> Weight: </strong> <%= p.weight%></li>
+  <li class="list-group-item"><strong> Date of Birth: </strong> <%= p.date_of_birth%></li>
+</ul>
+      
+    <%end%>
+  </div>
+</div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
-
-
+<br>
+<ul class= "list-group">
+  <li class="list-group-item list-group-item-dark"><h5> My Workouts </h5></li>
+</ul>
 <div class="row">
     <% @workouts.each do |p| %>
       <div class="col-lg-4 col-md-6">
