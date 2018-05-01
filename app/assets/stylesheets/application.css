@@ -21,3 +21,33 @@
    height: 40px;
    width: 40px;
   }
+
+  .badge-primary, .btn-primary{
+      background-color: #007994;
+      border-color: #007994;
+  }
+  .btn-primary:hover {
+   background-color: #9bc6d0;
+   border-color: transparent;
+ 
+  }
+
+  body{
+      background-color: #000;
+
+     
+  }
+
+  .container-fluid{
+     color: #fff;
+  }
+
+  .list-group, .card{
+      color: #000;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+ 

@@ -1,9 +1,11 @@
-
+<br>
 <div class="row">
 
 <% cache @workouts do%>
+
     <% @workouts.each do |p| %>
     <% cache p do%>
+    <% if p.public %>
       <div class="col-lg-4 col-md-6">
       <div class="card">
       <%= image_tag(asset_path(p.featureImage), :class => "card-img-top") %>
@@ -14,6 +16,7 @@
       </div>
       </div>
       </div>
+      <%end%>
     <%end%>
     <%end%>
     <%end%>

@@ -12,8 +12,8 @@
       <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    </head>
-   <div class="container-fluid">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
+
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
          <a class="navbar-brand" href="#">DropHiit</a>
          <a class="navbar-brand" href="/"><%= image_tag("logo.png", height: '10', width: '16')%>
          </a>
@@ -38,9 +38,9 @@
          <% if logged_in? %>
          <div class="btn-group">
             <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Add Text
+            
             </button>
-            <ul class="dropdown-menu dropdown-menu-right">
+            <ul class="dropdown-menu dropdown-menu-left">
               <li><%= link_to "Profile", current_user, class:"dropdown-item" %></li>
               <li><%= link_to "Settings", '#', class:"dropdown-item"  %></li>
               <li class="dropdow-divider"></li>
@@ -51,6 +51,8 @@
           <li><%= link_to "Log in", login_path %></li>
         <% end %>
       </nav>
+   <div class="container-fluid">
+      
       <%= yield %>
       <!--#<%= debug(params) if Rails.env.development? %> -->
    </div>

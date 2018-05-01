@@ -1,30 +1,35 @@
-<!--<p id="notice"><%= notice %></p> -->
+<p id="notice"><%= notice %></p> 
 
-<% @work.each do |t| %>
- <h1> <%= t.name %> </h1>
-<% end %>
-
-<h2><%= total_time_format(@time)%></h2>
-
-<%@average.each do |avg|%>
- <h2><span class="badge badge-primary badge-pill"> Intensity Level: <%= avg.avgIntensity %></span> </h2>
-<%end%>
-<br>
+<div class ="row">
+  <div class="col-4 offset-2">
+    <% @work.each do |w| %>
+    <h1> <%= w.name %> </h1>
+    <h2><%= total_time_format(@time)%></h2>
+      <%@average.each do |avg|%>
+        <h2><span class="badge badge-primary badge-pill"> Intensity Level: <%= avg.avgIntensity %></span> </h2>
+      <%end%>
+      <div class="card">
+        <%= image_tag(asset_path(w.featureImage), :class => "card-img-top") %>
+      </div>
+    <% end %>
   </div>
-    <ul class="list-group">
-    <% @title.each do |exercise| %>
-    <div class="row">
-      <div class="col-lg-4 col-md-6 col-sm-12">
-      <li class="list-group-item d-flex justify-content-between align-items-center"><%= exercise.exercise%>
+  <div class="col-3">
+        <ul class="list-group">
+        <% @title.each do |exercise| %>
+          
+          <li class="list-group-item d-flex justify-content-between align-items-center"><%= exercise.exercise%>
 
-      <span class="badge badge-primary badge-pill">Level: <%=exercise.intensityLevel%></span></li>
-    </ul>
+          <span class="badge badge-primary badge-pill">Level: <%=exercise.intensityLevel%></span></li>
+        
+        <% end %>
+        </ul>
   </div>
 </div>
-    <% end %>
-
-<br>
-
+<div class="row">
+<div class="col">
+  <br>
 <%= link_to 'Add Exercises', new_workout_path(@exercise) %> 
 <%= link_to 'Edit', edit_workout_path(@workout) %> 
 <%= link_to 'Back', workouts_path %>
+</div>
+</div>
