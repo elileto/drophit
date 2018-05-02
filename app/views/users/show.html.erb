@@ -2,13 +2,9 @@
 
 
 
-<h3><%= firstname_lastname(@user.firstname, @user.lastname)%></h3>
-
-<h4>
-  <strong>Email:</strong> <%= @user.email %>
-</h4>
-
-<p>
+<h3 class="d-flex justify-content-center"><%= firstname_lastname(@user.firstname, @user.lastname)%></h3>
+<br>
+<p class="d-flex justify-content-center">
   <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
     View Profile
   </button>
@@ -17,6 +13,7 @@
   <div class="card card-body">
     <%=@profile.find_each do |p|%>
     <ul class="list-group, list-group-flush">
+  <li class="list-group-item"><strong>Email:</strong> <%= @user.email %></li>
   <li class="list-group-item"><strong> Gender: </strong> <%= p.gender%></li>
   <li class="list-group-item"><strong> Height: </strong> <%= p.height%></li>
   <li class="list-group-item"><strong> Weight: </strong> <%= p.weight%></li>
@@ -28,9 +25,10 @@
 </div>
 
 <br>
-<ul class= "list-group">
-  <li class="list-group-item list-group-item-dark"><h5> My Workouts </h5></li>
-</ul>
+
+<h5> My Workouts </h5>
+
+<br>
 <div class="row">
     <% @workouts.each do |p| %>
       <div class="col-lg-4 col-md-6">

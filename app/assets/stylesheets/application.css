@@ -13,7 +13,37 @@
  *= require_tree .
  *= require_self
  */
+   /**************************************************************/
+  /* Container */
+  /**************************************************************/
+ body{
+   /* display: flex;
+    justify-content: center;
+    align-items: center;
+    background: 
+      linear-gradient(to bottom, transparent 50%, rgba(255, 255, 255, .25) 50%),
+      linear-gradient(to bottom, #0E4CEB, #8E3CEB);
+      background-size: 10px, 10px, 100%, 100%;
+*/
+background: #314755; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #314755, #26a0da); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #314755, #26a0da);
+   
+}
 
+.container-fluid{
+   color: #fff;
+}
+
+.no-margin{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+   /**************************************************************/
+  /* Nav */
+  /**************************************************************/
  .navbar-brand {
     padding: 0px;
   }
@@ -21,6 +51,10 @@
    height: 40px;
    width: 40px;
   }
+
+    /**************************************************************/
+  /* Buttons and Links*/
+  /**************************************************************/
 
   .badge-primary, .btn-primary{
       background-color: #007994;
@@ -32,15 +66,9 @@
  
   }
 
-  body{
-      background-color: #000;
-
-     
-  }
-
-  .container-fluid{
-     color: #fff;
-  }
+.btn-primary.focus, .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem#007994;
+}
 
   .list-group, .card{
       color: #000;
@@ -49,5 +77,36 @@
   a {
     color: #fff;
     text-decoration: none;
+  }
+
+
+
+  /**************************************************************/
+  /* Alerts */
+  /**************************************************************/
+ .alert {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  
+  @keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
   }
  
