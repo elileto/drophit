@@ -1,6 +1,7 @@
 <% provide(:title, "Log in")%>
 
 
+
 <div class="row">
         <div class="col-md-6 offset-md-3">
         <h1> Log in </h1>
@@ -11,10 +12,15 @@
 
         <%=form.label :password%>
         <%=form.password_field :password, class: 'form-control'%>
-            <br>
-       
-            <%= form.submit "Log In", class: "btn btn-primary"  %>
-     
+        <br>
+        <%= form.submit "Log In", class: "btn btn-primary"  %>
+        <br>
+        <% end %>
+        <br>
+        <% flash.each do |key, value| %>
+            <div class="alert alert-danger<%= flash_class(key)%>">
+                  <%= value %>
+             </div>
         <% end %>
         <br>
         <p> New User? <%= link_to "Sign up Now!", signup_path %> </p>
